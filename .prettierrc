@@ -1,0 +1,10 @@
+{
+    "plugins": [
+        "prettier-plugin-css-order",
+        "@softonus/prettier-plugin-duplicate-remover"
+    ],
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid",
+    "tabWidth": 4
+}

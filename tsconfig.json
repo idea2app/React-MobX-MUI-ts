@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "ES2020",
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "useDefineForClassFields": true,
+        "lib": ["ES2023", "DOM"],
+        "skipLibCheck": true,
+        "checkJs": true,
+        "jsx": "react-jsx"
+    },
+    "include": ["src/**/*", "*.mjs"]
+}

@@ -1,0 +1,22 @@
+.parcel-cache/
+coverage/
+dist/
+package-lock.json
+yarn.lock
+node_modules/
+.env
+*.log
+.husky/_/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE configuration
+.vscode/settings.json
+.idea/
