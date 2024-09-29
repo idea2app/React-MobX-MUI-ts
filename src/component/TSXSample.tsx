@@ -1,19 +1,14 @@
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-jsx';
-import 'prismjs/components/prism-typescript';
-import 'prismjs/components/prism-tsx';
-
-import { CodeBlock } from 'idea-react';
+import { Typography } from '@mui/material';
 import { FC, PropsWithChildren } from 'react';
 
 export type TSXSampleProps = PropsWithChildren<{
-    title: string;
+  title: string;
 }>;
 
 export const TSXSample: FC<TSXSampleProps> = ({ title, children }) => (
-    <>
-        <h2 className="mt-3">{title}</h2>
-        {children}
-        <CodeBlock language="tsx">{children}</CodeBlock>
-    </>
+  <>
+    <Typography variant="h2">{title}</Typography>
+    {children}
+    {/* <CodeBlock language="tsx">{children}</CodeBlock> */}
+  </>
 );

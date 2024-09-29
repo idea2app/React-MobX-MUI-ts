@@ -1,0 +1,90 @@
+import DarkModeIcon from '@mui/icons-material/DarkModeOutlined';
+import LightModeIcon from '@mui/icons-material/LightModeOutlined';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { useColorScheme } from '@mui/material/styles';
+import { MouseEvent, useState } from 'react';
+
+/**
+ * @link https://github.com/mui/material-ui/blob/79bfe9a38201ec639f7b65c3e158c9fe565b204b/docs/data/material/getting-started/templates/shared-theme/ColorModeIconDropdown.tsx#L10
+ */
+export default function ColorModeIconDropdown() {
+  const { mode, systemMode, setMode } = useColorScheme();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleMode = (targetMode: 'system' | 'light' | 'dark') => () => {
+    setMode(targetMode);
+    handleClose();
+  };
+  if (!mode) {
+    return (
+      <Box
+        data-screenshot="toggle-mode"
+        sx={theme => ({
+          verticalAlign: 'bottom',
+          display: 'inline-flex',
+          width: '2.25rem',
+          height: '2.25rem',
+          borderRadius: (theme.vars || theme).shape.borderRadius,
+          border: '1px solid',
+          borderColor: (theme.vars || theme).palette.divider
+        })}
+      />
+    );
+  }
+  const resolvedMode = (systemMode || mode) as 'light' | 'dark';
+  const icon = {
+    light: <LightModeIcon />,
+    dark: <DarkModeIcon />
+  }[resolvedMode];
+  return (
+    <>
+      <IconButton
+        data-screenshot="toggle-mode"
+        size="small"
+        aria-controls={open ? 'color-scheme-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        disableRipple
+        onClick={handleClick}
+      >
+        {icon}
+      </IconButton>
+      <Menu
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        slotProps={{
+          paper: {
+            variant: 'outlined',
+            sx: {
+              my: '4px'
+            }
+          }
+        }}
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        onClose={handleClose}
+        onClick={handleClose}
+      >
+        <MenuItem selected={mode === 'system'} onClick={handleMode('system')}>
+          System
+        </MenuItem>
+        <MenuItem selected={mode === 'light'} onClick={handleMode('light')}>
+          Light
+        </MenuItem>
+        <MenuItem selected={mode === 'dark'} onClick={handleMode('dark')}>
+          Dark
+        </MenuItem>
+      </Menu>
+    </>
+  );
+}
