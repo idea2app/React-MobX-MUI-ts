@@ -5,7 +5,6 @@ import { MainNavigator } from '../component/Layout/Nav/MainNavigator';
 import ChartPage from './chart.mdx';
 import { DownloaderPage } from './Downloader';
 import HomePage from './Home';
-// import { PaginationPage } from './Pagination';
 import { ScrollListPage } from './ScrollList';
 
 export const PageFrame = () => (
@@ -15,7 +14,6 @@ export const PageFrame = () => (
     <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/pagination" element={<PaginationPage />} /> */}
         <Route path="/scroll-list" element={<ScrollListPage />} />
         <Route
           path="/chart"

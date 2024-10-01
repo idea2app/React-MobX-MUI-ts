@@ -43,6 +43,8 @@ export class GitLogo extends Component<GitLogoProps> {
     const { path } = this;
     const { name } = this.props;
 
-    return path && <CardMedia component="img" image={path} alt={name} />;
+    return (
+      path && <CardMedia sx={{ height: 32, width: 32 }} component="img" image={path} alt={name} />
+    );
   }
 }

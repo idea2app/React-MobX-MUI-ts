@@ -25,17 +25,7 @@ export const theme = createTheme({
   colorSchemes,
   typography,
   shadows,
-  shape,
-  components: {
-    // Use `MuiDataGrid` on DataGrid, DataGridPro and DataGridPremium
-    MuiDataGrid: {
-      styleOverrides: {
-        // root: {
-        //   backgroundColor: 'red'
-        // }
-      }
-    }
-  }
+  shape
 });
 
 export function App() {

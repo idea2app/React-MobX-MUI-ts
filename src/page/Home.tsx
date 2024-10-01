@@ -68,7 +68,7 @@ class HomePage extends Component<RouteComponentProps<{}, {}, { guest: string }>>
       { list } = project;
 
     return (
-      <Container>
+      <Container sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
         <Typography variant="h1">{t('upstream_projects')}</Typography>
 
         {guest && (
@@ -76,7 +76,7 @@ class HomePage extends Component<RouteComponentProps<{}, {}, { guest: string }>>
             {t('welcome')} {guest}!
           </Typography>
         )}
-        <Grid spacing={{ xs: 2, md: 3 }} columns={12} container>
+        <Grid component="ul" spacing={{ xs: 2, md: 3 }} columns={12} sx={{ m: 0, p: 0 }} container>
           {list.map(this.renderProject)}
         </Grid>
       </Container>

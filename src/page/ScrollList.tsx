@@ -21,16 +21,17 @@ export interface ScrollListProps<D extends DataObject, F extends Filter<D> = Fil
 }
 
 export const ScrollListPage: FC = observer(() => (
-  <Container>
+  <Container sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
     <Typography variant="h1">{i18n.t('scroll_list')}</Typography>
 
     <ScrollList
       translator={i18n}
       store={repositoryStore}
+      filter={{ relation: ['languages'] }}
       renderList={allItems => (
-        <Grid component="ul">
+        <Grid component="ul" spacing={3} sx={{ m: 0, p: 0 }} columns={12} container>
           {allItems.map(item => (
-            <Grid key={item.id}>
+            <Grid key={item.id} size={{ xs: 12, sm: 6 }}>
               <GitCard {...item} />
             </Grid>
           ))}

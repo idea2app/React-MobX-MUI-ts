@@ -4,7 +4,6 @@ const { t } = i18n;
 
 export const mainNavLinks = () => [
   { href: '#/', title: t('home_page') },
-  { href: '#/pagination', title: t('pagination') },
   { href: '#/scroll-list', title: t('scroll_list') },
   { href: '#/chart', title: t('chart') },
   { href: '#/downloader', title: t('downloader') },

@@ -20,7 +20,7 @@ import { downloader } from '../model/service';
 export const DTCard: FC<{ task: DownloadTask }> = observer(({ task }) => (
   <Card component="li">
     <CardContent>
-      <CardHeader>{task.name}</CardHeader>
+      <CardHeader title={task.name} />
       <Stack
         direction="row"
         alignItems="center"
@@ -29,10 +29,10 @@ export const DTCard: FC<{ task: DownloadTask }> = observer(({ task }) => (
         spacing={3}
       >
         <LinearProgress
-          color="secondary"
+          color="primary"
           variant="determinate"
           value={task.percent}
-          sx={{ height: 10, borderRadius: 5, backgroundColor: '#1a90ff' }}
+          sx={{ width: '100%', height: 10, borderRadius: 5 }}
         />
         <Typography
           variant="body2"

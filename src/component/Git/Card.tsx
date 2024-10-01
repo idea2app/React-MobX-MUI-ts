@@ -1,10 +1,11 @@
 import {
-  Badge,
+  Box,
   Button,
   Card,
   CardActions,
   CardContent,
   CardHeader,
+  Chip,
   Typography
 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
@@ -20,42 +21,54 @@ export type GitCardProps = Pick<GitRepository, 'full_name' | 'html_url' | 'langu
 
 export const GitCard: FC<GitCardProps> = observer(
   ({ full_name, html_url, languages = [], topics = [], description, homepage }) => (
-    <Card>
-      <CardContent>
-        <CardHeader>
+    <Card
+      sx={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+      }}
+    >
+      <CardHeader
+        title={
           <a target="_blank" href={html_url} rel="noreferrer">
             {full_name}
           </a>
-        </CardHeader>
-
-        <nav>
+        }
+      />
+      <CardContent
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          gap: 2
+        }}
+      >
+        <Box component="ul" sx={{ m: 0, p: 0, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
           {topics.map(topic => (
-            <Badge
+            <Chip
               key={topic}
-              // bg={text2color(topic, ['light'])}
               component="a"
               target="_blank"
               href={`https://github.com/topics/${topic}`}
-            >
-              {topic}
-            </Badge>
+              label={topic}
+              size="small"
+              clickable
+            />
           ))}
-        </nav>
-        <Grid component="ul">
+        </Box>
+        <Grid component="ul" sx={{ m: 0, p: 0 }}>
           {languages.map(language => (
-            <Grid key={language} component="li">
-              <GitLogo name={language} />
-            </Grid>
+            <GitLogo name={language} />
           ))}
         </Grid>
         <Typography>{description}</Typography>
       </CardContent>
+
       <CardActions>
-        {homepage && (
-          <Button color="success" target="_blank" href={homepage}>
-            {i18n.t('home_page')}
-          </Button>
-        )}
+        <Button color="success" target="_blank" href={homepage || html_url}>
+          {i18n.t('home_page')}
+        </Button>
       </CardActions>
     </Card>
   )
