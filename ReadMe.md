@@ -11,23 +11,19 @@
 
 ## Technology stack
 
--   Language: [TypeScript v5][2]
--   Component engine: [React v18][1]
--   State management: [MobX v6][3]
--   Component suite: [Material UI][10]
--   HTTP Client: [KoAJAX v1][11]
--   PWA framework: [Workbox v7][12]
--   Package bundler: [Parcel v2][13]
--   CI / CD: GitHub [Actions][14] + [Pages][15]
+- Language: [TypeScript v5][2]
+- Component engine: [React v18][1]
+- State management: [MobX v6][3]
+- Component suite: [Material UI][10]
+- HTTP Client: [KoAJAX v3][11]
+- PWA framework: [Workbox v7][12]
+- Package bundler: [Parcel v2][13]
+- CI / CD: GitHub [Actions][14] + [Pages][15]
 
 ## Extra components
 
-1.  [Component Sample](src/component/TSXSample.tsx)
-2.  Rich-text editor
-    -   [HTML version][18]
-    -   [JSON version](src/component/Editor.tsx)
-3.  [GitHub logo](src/component/Git/Logo.tsx)
-4.  [GitHub card](src/component/Git/Card.tsx)
+1.  [GitHub logo](src/component/Git/Logo.tsx)
+2.  [GitHub card](src/component/Git/Card.tsx)
 
 ## Best practice
 
