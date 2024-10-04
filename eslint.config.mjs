@@ -61,6 +61,13 @@ export default tsEslint.config(
           noSortAlphabetically: true
         }
       ],
+      'react/self-closing-comp': [
+        'error',
+        {
+          component: true,
+          html: true
+        }
+      ],
       '@typescript-eslint/no-empty-object-type': 'off',
       '@cspell/spellchecker': [
         'warn',
