@@ -1,15 +1,15 @@
 declare module '*.less' {
-    const map: Record<string, string>;
+  const map: Record<string, string>;
 
-    export = map;
+  export = map;
 }
 
 declare module 'browser-unhandled-rejection' {
-    export const auto: () => void;
+  export const auto: () => void;
 }
 
 declare module '@editorjs/*' {
-    const Plugin: import('react').ComponentClass;
+  const Plugin: import('react').ComponentClass;
 
-    export default Plugin;
+  export default Plugin;
 }

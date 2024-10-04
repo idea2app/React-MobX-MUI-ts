@@ -12,28 +12,15 @@ import { TSXSample } from '../component/TSXSample';
 
 This example is based on [ECharts-JSX][1] & [Parcel-transformer-MDX][2].
 
-<TSXSample title='ECharts example'>
-    <ec-svg-renderer style={{ height: '80vh' }} onClick={console.log}>
-        <ec-title text="ECharts example" />
-        <ec-legend data={['sales']} />
-        <ec-tooltip />
-        <ec-x-axis
-            data={[
-                'Shirts',
-                'Cardigans',
-                'Chiffons',
-                'Pants',
-                'Heels',
-                'Socks'
-            ]}
-        />
-        <ec-y-axis />
-        <ec-bar-chart
-            name="sales"
-            data={[5, 20, 36, 10, 10, 20]}
-            onClick={console.log}
-        />
-    </ec-svg-renderer>
+<TSXSample title="ECharts example">
+  <ec-svg-renderer style={{ height: '80vh' }} onClick={console.log}>
+    <ec-title text="ECharts example" />
+    <ec-legend data={['sales']} />
+    <ec-tooltip />
+    <ec-x-axis data={['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks']} />
+    <ec-y-axis />
+    <ec-bar-chart name="sales" data={[5, 20, 36, 10, 10, 20]} onClick={console.log} />
+  </ec-svg-renderer>
 </TSXSample>
 
 [1]: https://github.com/idea2app/ECharts-JSX

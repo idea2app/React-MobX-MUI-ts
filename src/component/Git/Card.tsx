@@ -1,66 +1,78 @@
-import { text2color } from 'idea-react';
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardOwnProps,
+  Chip,
+  Typography
+} from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import { GitRepository } from 'mobx-github';
 import { observer } from 'mobx-react';
 import { FC } from 'react';
-import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
 
 import { i18n } from '../../model/Translation';
 import { GitLogo } from './Logo';
 
-export interface GitCardProps
-    extends Pick<GitRepository, 'full_name' | 'html_url' | 'languages'>,
-        Partial<Pick<GitRepository, 'topics' | 'description' | 'homepage'>> {
-    className?: string;
-}
+export type GitCardProps = Pick<GitRepository, 'full_name' | 'html_url' | 'languages'> &
+  Partial<Pick<GitRepository, 'topics' | 'description' | 'homepage'>> &
+  CardOwnProps;
 
 export const GitCard: FC<GitCardProps> = observer(
-    ({
-        className = 'shadow-sm',
-        full_name,
-        html_url,
-        languages = [],
-        topics = [],
-        description,
-        homepage
-    }) => (
-        <Card className={className}>
-            <Card.Body className="d-flex flex-column gap-3">
-                <Card.Title as="h3" className="h5">
-                    <a target="_blank" href={html_url} rel="noreferrer">
-                        {full_name}
-                    </a>
-                </Card.Title>
+  ({ full_name, html_url, languages = [], topics = [], description, homepage, sx, ...rest }) => (
+    <Card
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        ...sx
+      }}
+      {...rest}
+    >
+      <CardHeader
+        title={
+          <a target="_blank" href={html_url} rel="noreferrer">
+            {full_name}
+          </a>
+        }
+      />
+      <CardContent
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          gap: 2
+        }}
+      >
+        <Box component="ul" sx={{ m: 0, p: 0, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+          {topics.map(topic => (
+            <Chip
+              key={topic}
+              component="a"
+              target="_blank"
+              href={`https://github.com/topics/${topic}`}
+              label={topic}
+              size="small"
+              clickable
+            />
+          ))}
+        </Box>
+        <Grid component="ul" sx={{ m: 0, p: 0 }}>
+          {languages.map(language => (
+            <GitLogo name={language} />
+          ))}
+        </Grid>
+        <Typography>{description}</Typography>
+      </CardContent>
 
-                <nav className="flex-fill">
-                    {topics.map(topic => (
-                        <Badge
-                            key={topic}
-                            className="text-decoration-none me-1"
-                            bg={text2color(topic, ['light'])}
-                            as="a"
-                            target="_blank"
-                            href={`https://github.com/topics/${topic}`}
-                        >
-                            {topic}
-                        </Badge>
-                    ))}
-                </nav>
-                <Row as="ul" className="list-unstyled g-4" xs={4}>
-                    {languages.map(language => (
-                        <Col as="li" key={language}>
-                            <GitLogo name={language} />
-                        </Col>
-                    ))}
-                </Row>
-                <Card.Text>{description}</Card.Text>
-            </Card.Body>
-            <Card.Footer className="d-flex justify-content-between align-items-center">
-                {homepage && (
-                    <Button variant="success" target="_blank" href={homepage}>
-                        {i18n.t('home_page')}
-                    </Button>
-                )}
-            </Card.Footer>
-        </Card>
-    )
+      <CardActions>
+        <Button color="success" target="_blank" href={homepage || html_url}>
+          {i18n.t('home_page')}
+        </Button>
+      </CardActions>
+    </Card>
+  )
 );
