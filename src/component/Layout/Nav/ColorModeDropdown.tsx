@@ -7,24 +7,28 @@ import MenuItem from '@mui/material/MenuItem';
 import { useColorScheme } from '@mui/material/styles';
 import { MouseEvent, useState } from 'react';
 
+export const themeSwitchIcons = {
+  light: <LightModeIcon />,
+  dark: <DarkModeIcon />
+};
+
 /**
- * @link https://github.com/mui/material-ui/blob/79bfe9a38201ec639f7b65c3e158c9fe565b204b/docs/data/material/getting-started/templates/shared-theme/ColorModeIconDropdown.tsx#L10
+ * @copyright Material UI {@link https://github.com/mui/material-ui/blob/79bfe9a38201ec639f7b65c3e158c9fe565b204b/docs/data/material/getting-started/templates/shared-theme/ColorModeIconDropdown.tsx#L10}
  */
 export default function ColorModeIconDropdown() {
   const { mode, systemMode, setMode } = useColorScheme();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleOpen = ({ currentTarget }: MouseEvent<HTMLElement>) => setAnchorEl(currentTarget);
+
+  const handleClose = () => setAnchorEl(null);
+
   const handleMode = (targetMode: 'system' | 'light' | 'dark') => () => {
     setMode(targetMode);
     handleClose();
   };
-  if (!mode) {
+
+  if (!mode)
     return (
       <Box
         data-screenshot="toggle-mode"
@@ -39,12 +43,9 @@ export default function ColorModeIconDropdown() {
         })}
       />
     );
-  }
   const resolvedMode = (systemMode || mode) as 'light' | 'dark';
-  const icon = {
-    light: <LightModeIcon />,
-    dark: <DarkModeIcon />
-  }[resolvedMode];
+  const icon = themeSwitchIcons[resolvedMode];
+
   return (
     <>
       <IconButton
@@ -54,7 +55,7 @@ export default function ColorModeIconDropdown() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         disableRipple
-        onClick={handleClick}
+        onClick={handleOpen}
       >
         {icon}
       </IconButton>
@@ -65,9 +66,7 @@ export default function ColorModeIconDropdown() {
         slotProps={{
           paper: {
             variant: 'outlined',
-            sx: {
-              my: '4px'
-            }
+            sx: { my: '4px' }
           }
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}

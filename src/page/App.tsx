@@ -1,6 +1,5 @@
 import { CssBaseline } from '@mui/material';
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
-import shadows from '@mui/material/styles/shadows';
 /**
  * @link https://mui.com/material-ui/customization/css-theme-variables/usage/#typescript
  */
@@ -10,7 +9,6 @@ import type {} from '@mui/material/themeCssVarsAugmentation';
  */
 import type {} from '@mui/x-data-grid/themeAugmentation';
 
-import { colorSchemes, shape, typography } from '../component/Layout/themePrimitive';
 import { PageFrame } from '.';
 
 /**
@@ -18,23 +16,18 @@ import { PageFrame } from '.';
  * @see {@link https://mui.com/material-ui/customization/palette/#color-schemes} for more details about color theme configuration.
  */
 export const theme = createTheme({
+  colorSchemes: { dark: true },
   cssVariables: {
-    colorSchemeSelector: 'data-mui-color-scheme',
-    cssVarPrefix: 'idea2app'
-  },
-  colorSchemes,
-  typography,
-  shadows,
-  shape
+    cssVarPrefix: '',
+    colorSchemeSelector: 'data'
+  }
 });
 
-export function App() {
-  return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <CssBaseline enableColorScheme />
-        <PageFrame />
-      </ThemeProvider>
-    </StyledEngineProvider>
-  );
-}
+export const App = () => (
+  <StyledEngineProvider injectFirst>
+    <ThemeProvider theme={theme} disableTransitionOnChange>
+      <CssBaseline enableColorScheme />
+      <PageFrame />
+    </ThemeProvider>
+  </StyledEngineProvider>
+);

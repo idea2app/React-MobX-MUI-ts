@@ -34,10 +34,9 @@ export const DTCard: FC<{ task: DownloadTask }> = observer(({ task }) => (
           value={task.percent}
           sx={{ width: '100%', height: 10, borderRadius: 5 }}
         />
-        <Typography
-          variant="body2"
-          sx={{ color: 'text.secondary' }}
-        >{`${Math.round(task.percent)}%`}</Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          {Math.round(task.percent)}%
+        </Typography>
       </Stack>
     </CardContent>
 

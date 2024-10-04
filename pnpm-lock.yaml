@@ -8,30 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@editorjs/code':
-        specifier: ^2.9.2
-        version: 2.9.2
-      '@editorjs/editorjs':
-        specifier: ^2.30.6
-        version: 2.30.6
-      '@editorjs/header':
-        specifier: ^2.8.7
-        version: 2.8.7
-      '@editorjs/image':
-        specifier: ^2.9.3
-        version: 2.9.3
-      '@editorjs/link':
-        specifier: ^2.6.2
-        version: 2.6.2
-      '@editorjs/list':
-        specifier: ^1.10.0
-        version: 1.10.0
-      '@editorjs/paragraph':
-        specifier: ^2.11.6
-        version: 2.11.6
-      '@editorjs/quote':
-        specifier: ^2.7.2
-        version: 2.7.2
       '@emotion/react':
         specifier: ^11.13.3
         version: 11.13.3(@types/react@18.3.9)(react@18.3.1)
@@ -65,9 +41,6 @@ importers:
       echarts-jsx:
         specifier: ^1.2.1
         version: 1.2.1(typescript@5.6.2)
-      editorjs-html:
-        specifier: ^3.4.3
-        version: 3.4.3
       koajax:
         specifier: ^3.0.2
         version: 3.0.2(typescript@5.6.2)
@@ -95,9 +68,6 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
-      react-editor-js:
-        specifier: ^2.1.0
-        version: 2.1.0(@editorjs/editorjs@2.30.6)(@editorjs/paragraph@2.11.6)(react@18.3.1)
       react-router-class-tools:
         specifier: ^0.1.3
         version: 0.1.3(react-router-dom@6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(typescript@5.6.2)
@@ -804,15 +774,6 @@ packages:
     resolution: {integrity: sha512-/l42B1qxpG6RdfYf343Uw1vmDjeNhneUXtzhojE7pDgfpEypmRhI6j1kr17XCVv4Cgl9HdAiQY2x0GwKm7rWCw==}
     engines: {node: '>=6.9.0'}
 
-  '@codexteam/icons@0.0.4':
-    resolution: {integrity: sha512-V8N/TY2TGyas4wLrPIFq7bcow68b3gu8DfDt1+rrHPtXxcexadKauRJL6eQgfG7Z0LCrN4boLRawR4S9gjIh/Q==}
-
-  '@codexteam/icons@0.0.5':
-    resolution: {integrity: sha512-s6H2KXhLz2rgbMZSkRm8dsMJvyUNZsEjxobBEg9ztdrb1B2H3pEzY6iTwI4XUPJWJ3c3qRKwV4TrO3J5jUdoQA==}
-
-  '@codexteam/icons@0.3.2':
-    resolution: {integrity: sha512-P1ep2fHoy0tv4wx85eic+uee5plDnZQ1Qa6gDfv7eHPkCXorMtVqJhzMb75o1izogh6G7380PqmFDXV3bW3Pig==}
-
   '@cspell/cspell-bundled-dicts@8.14.4':
     resolution: {integrity: sha512-JHZOpCJzN6fPBapBOvoeMxZbr0ZA11ZAkwcqM4w0lKoacbi6TwK8GIYf66hHvwLmMeav75TNXWE6aPTvBLMMqA==}
     engines: {node: '>=18'}
@@ -1016,36 +977,6 @@ packages:
   '@cspell/url@8.14.4':
     resolution: {integrity: sha512-htHhNF8WrM/NfaLSWuTYw0NqVgFRVHYSyHlRT3i/Yv5xvErld8Gw7C6ldm+0TLjoGlUe6X1VV72JSir7+yLp/Q==}
     engines: {node: '>=18.0'}
-
-  '@editorjs/code@2.9.2':
-    resolution: {integrity: sha512-KglaZMeL9fREMieyMJ5dWZR+eGPC/6qjWRc2EmwdwcuCsQVuQ1k7sgPzRL3phJWrtDqPvzNKJqjEji/OD7SF+Q==}
-
-  '@editorjs/dom@0.0.5':
-    resolution: {integrity: sha512-SZ78Gwpkp3EUhjBIp0lSojeQ35V9acF8SubJsMeOH/vlOUE40GOnvvwWZnF05lO7bIB0dOHhhJy4N7IIAWxP2w==}
-
-  '@editorjs/editorjs@2.30.6':
-    resolution: {integrity: sha512-6eQMc4Di3Hz9p4o+NGRgKaCeAF7eAk106m+bsDLc4eo94VGYO1M163OiGFdmanE+w503qTmXOzycWff5blEOAQ==}
-
-  '@editorjs/header@2.8.7':
-    resolution: {integrity: sha512-rfxzYFR/Jhaocj3Xxx8XjEjyzfPbBIVkcPZ9Uy3rEz1n3ewhV0V4zwuxCjVfFhLUVgQQExq43BxJnTNlLOzqDQ==}
-
-  '@editorjs/helpers@0.0.4':
-    resolution: {integrity: sha512-ieg3dzo2m1/ELze/RMNADiAiC5amXxIlVXoJ5vvXITOu/p/dPsrF+Oi3h5gBYvtGk9vg5LJUSG5YWU0tBUO1tw==}
-
-  '@editorjs/image@2.9.3':
-    resolution: {integrity: sha512-hBOHuqvL/ovjrns+xLuBh/b3kqABDlLxlByWnSuKnE31O351NDrg9AXrB1yYo0yZerw5V591rP0US3PEzp7CzQ==}
-
-  '@editorjs/link@2.6.2':
-    resolution: {integrity: sha512-3cPx6M4ZvwDDvsi0E0fvMR3rvveAV/C0GRo1JLeZJ9cG9QgyoNolj4eu5Eqx3/r1XTC/he54qYEIZ/Dc4Lr4Ow==}
-
-  '@editorjs/list@1.10.0':
-    resolution: {integrity: sha512-zXCHaNcIscpefnteBOS3x+98f/qBgEVsv+OvtKoTDZipMNqck2uVG+X2qMQr8xcwtJrj9ySX54lUac9FDlAHnA==}
-
-  '@editorjs/paragraph@2.11.6':
-    resolution: {integrity: sha512-i9B50Ylvh+0ZzUGWIba09PfUXsA00Y//zFZMwqsyaXXKxMluSIJ6ADFJbbK0zaV9Ijx49Xocrlg+CEPRqATk9w==}
-
-  '@editorjs/quote@2.7.2':
-    resolution: {integrity: sha512-C2yB6TdBJsmfcwe2rirSjPMCQ3jTz8oOwOPbOFeLDcvUgxECEIws8kZOkuxXePdWua68QwIpUFH7yWf338lwUQ==}
 
   '@emotion/babel-plugin@11.12.0':
     resolution: {integrity: sha512-y2WQb+oP8Jqvvclh8Q55gLUyb7UFvgv7eJfsj7td5TToBrIUtPay2kMrZi4xjq9qw2vD0ZR5fSho0yqoFgX7Rw==}
@@ -1776,26 +1707,6 @@ packages:
 
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
-
-  '@react-editor-js/client@2.1.0':
-    resolution: {integrity: sha512-X/OwqY2KKUUVIy24zvubHTI4qhiVIWMxGlU/Bc6tkf9gcsWgQjPvn75DwrQ5SIGBOYpSBcHY01JX0RRtJHRumw==}
-    peerDependencies:
-      '@editorjs/editorjs': '*'
-      '@editorjs/paragraph': '*'
-      react: '*'
-
-  '@react-editor-js/core@2.1.0':
-    resolution: {integrity: sha512-6h98D5g2RatdCDQRW/+N+eiMtjoq0n1n02m8oA7FrlEzEaOUyV+J+rmtmRS8OexLVOiNeWaSPDpVJ3MNiVLq8Q==}
-    peerDependencies:
-      '@editorjs/editorjs': '*'
-      react: '*'
-
-  '@react-editor-js/server@2.1.0':
-    resolution: {integrity: sha512-RnTbCmzCHbjcjPNKhr9FaehItHgAZyd47Lq+iIGynFqWSsrwGy46LgOXSvb50DYbwDyT0GtxaXBIk6aiFki1Dg==}
-    peerDependencies:
-      '@editorjs/editorjs': '*'
-      '@editorjs/paragraph': '*'
-      react: '*'
 
   '@remark-embedder/core@3.0.3':
     resolution: {integrity: sha512-izeW4GT5A/NgArjATndg1KKumL7IHLPZFQODJ07vSEHgCOBq2caMlnuvFGD+7ZmF4NCZks/HhZsYhfF46TOK5w==}
@@ -2732,9 +2643,6 @@ packages:
 
   echarts@5.5.1:
     resolution: {integrity: sha512-Fce8upazaAXUVUVsjgV6mBnGuqgO+JNDlcgF79Dksy4+wgGpQB2lmYoO4TSweFg/mZITdpGHomw/cNBJZj1icA==}
-
-  editorjs-html@3.4.3:
-    resolution: {integrity: sha512-HMqQ3BCE98uhSpJsbfH0c3CoMctUMCHlap2Eq/7/VjaHas+g3IJqyf+ERtMByoQCzvcW22ISYaZEeE7rGkd8Xg==}
 
   ejs@3.1.10:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
@@ -4528,9 +4436,6 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
-  react-editor-js@2.1.0:
-    resolution: {integrity: sha512-unI9D2pTH/2gBenc6LgCXJm8iqnrzB71CHgfjQmaB+lGR0Njx+ZXydgUQm1VofMmvF6vcCNVDE1Eb47zQbm14g==}
-
   react-error-overlay@6.0.9:
     resolution: {integrity: sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==}
 
@@ -6164,12 +6069,6 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@codexteam/icons@0.0.4': {}
-
-  '@codexteam/icons@0.0.5': {}
-
-  '@codexteam/icons@0.3.2': {}
-
   '@cspell/cspell-bundled-dicts@8.14.4':
     dependencies:
       '@cspell/dict-ada': 4.0.2
@@ -6363,45 +6262,6 @@ snapshots:
   '@cspell/strong-weak-map@8.14.4': {}
 
   '@cspell/url@8.14.4': {}
-
-  '@editorjs/code@2.9.2':
-    dependencies:
-      '@codexteam/icons': 0.3.2
-
-  '@editorjs/dom@0.0.5':
-    dependencies:
-      '@editorjs/helpers': 0.0.4
-
-  '@editorjs/editorjs@2.30.6': {}
-
-  '@editorjs/header@2.8.7':
-    dependencies:
-      '@codexteam/icons': 0.0.5
-      '@editorjs/editorjs': 2.30.6
-
-  '@editorjs/helpers@0.0.4': {}
-
-  '@editorjs/image@2.9.3':
-    dependencies:
-      '@codexteam/icons': 0.3.2
-
-  '@editorjs/link@2.6.2':
-    dependencies:
-      '@babel/runtime': 7.25.6
-      '@codexteam/icons': 0.0.4
-
-  '@editorjs/list@1.10.0':
-    dependencies:
-      '@codexteam/icons': 0.0.4
-
-  '@editorjs/paragraph@2.11.6':
-    dependencies:
-      '@codexteam/icons': 0.0.4
-
-  '@editorjs/quote@2.7.2':
-    dependencies:
-      '@codexteam/icons': 0.3.2
-      '@editorjs/dom': 0.0.5
 
   '@emotion/babel-plugin@11.12.0':
     dependencies:
@@ -7446,25 +7306,6 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@react-editor-js/client@2.1.0(@editorjs/editorjs@2.30.6)(@editorjs/paragraph@2.11.6)(react@18.3.1)':
-    dependencies:
-      '@editorjs/editorjs': 2.30.6
-      '@editorjs/paragraph': 2.11.6
-      '@react-editor-js/core': 2.1.0(@editorjs/editorjs@2.30.6)(react@18.3.1)
-      react: 18.3.1
-
-  '@react-editor-js/core@2.1.0(@editorjs/editorjs@2.30.6)(react@18.3.1)':
-    dependencies:
-      '@editorjs/editorjs': 2.30.6
-      react: 18.3.1
-
-  '@react-editor-js/server@2.1.0(@editorjs/editorjs@2.30.6)(@editorjs/paragraph@2.11.6)(react@18.3.1)':
-    dependencies:
-      '@editorjs/editorjs': 2.30.6
-      '@editorjs/paragraph': 2.11.6
-      '@react-editor-js/core': 2.1.0(@editorjs/editorjs@2.30.6)(react@18.3.1)
-      react: 18.3.1
-
   '@remark-embedder/core@3.0.3':
     dependencies:
       '@babel/runtime': 7.25.6
@@ -8500,8 +8341,6 @@ snapshots:
     dependencies:
       tslib: 2.3.0
       zrender: 5.6.0
-
-  editorjs-html@3.4.3: {}
 
   ejs@3.1.10:
     dependencies:
@@ -10723,16 +10562,6 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
-
-  react-editor-js@2.1.0(@editorjs/editorjs@2.30.6)(@editorjs/paragraph@2.11.6)(react@18.3.1):
-    dependencies:
-      '@react-editor-js/client': 2.1.0(@editorjs/editorjs@2.30.6)(@editorjs/paragraph@2.11.6)(react@18.3.1)
-      '@react-editor-js/core': 2.1.0(@editorjs/editorjs@2.30.6)(react@18.3.1)
-      '@react-editor-js/server': 2.1.0(@editorjs/editorjs@2.30.6)(@editorjs/paragraph@2.11.6)(react@18.3.1)
-    transitivePeerDependencies:
-      - '@editorjs/editorjs'
-      - '@editorjs/paragraph'
-      - react
 
   react-error-overlay@6.0.9: {}
 

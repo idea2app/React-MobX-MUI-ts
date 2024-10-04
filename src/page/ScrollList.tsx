@@ -32,7 +32,7 @@ export const ScrollListPage: FC = observer(() => (
         <Grid component="ul" spacing={3} sx={{ m: 0, p: 0 }} columns={12} container>
           {allItems.map(item => (
             <Grid key={item.id} size={{ xs: 12, sm: 6 }}>
-              <GitCard {...item} />
+              <GitCard sx={{ height: '100%' }} {...item} />
             </Grid>
           ))}
         </Grid>

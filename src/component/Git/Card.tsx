@@ -5,6 +5,7 @@ import {
   CardActions,
   CardContent,
   CardHeader,
+  CardOwnProps,
   Chip,
   Typography
 } from '@mui/material';
@@ -17,17 +18,19 @@ import { i18n } from '../../model/Translation';
 import { GitLogo } from './Logo';
 
 export type GitCardProps = Pick<GitRepository, 'full_name' | 'html_url' | 'languages'> &
-  Partial<Pick<GitRepository, 'topics' | 'description' | 'homepage'>>;
+  Partial<Pick<GitRepository, 'topics' | 'description' | 'homepage'>> &
+  CardOwnProps;
 
 export const GitCard: FC<GitCardProps> = observer(
-  ({ full_name, html_url, languages = [], topics = [], description, homepage }) => (
+  ({ full_name, html_url, languages = [], topics = [], description, homepage, sx, ...rest }) => (
     <Card
       sx={{
-        height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        ...sx
       }}
+      {...rest}
     >
       <CardHeader
         title={
