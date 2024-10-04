@@ -35,11 +35,7 @@ export default tsEslint.config(
   // base config
   {
     languageOptions: {
-      globals: {
-        ...globals.es2020,
-        ...globals.browser,
-        ...globals.node
-      },
+      globals: { ...globals.es2020, ...globals.browser, ...globals.node },
       parserOptions: {
         projectService: true,
         tsconfigRootDir,
@@ -61,13 +57,7 @@ export default tsEslint.config(
           noSortAlphabetically: true
         }
       ],
-      'react/self-closing-comp': [
-        'error',
-        {
-          component: true,
-          html: true
-        }
-      ],
+      'react/self-closing-comp': ['error', { component: true, html: true }],
       '@typescript-eslint/no-empty-object-type': 'off',
       '@cspell/spellchecker': [
         'warn',
