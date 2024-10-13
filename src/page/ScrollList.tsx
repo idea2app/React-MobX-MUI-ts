@@ -27,6 +27,9 @@ export const ScrollListPage: FC = observer(() => (
     <ScrollList
       translator={i18n}
       store={repositoryStore}
+      /**
+       * @todo move filter to store
+       */
       filter={{ relation: ['languages'] }}
       renderList={allItems => (
         <Grid component="ul" spacing={3} sx={{ m: 0, p: 0 }} columns={12} container>
